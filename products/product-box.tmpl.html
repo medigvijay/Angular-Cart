@@ -1,0 +1,18 @@
+<div>
+    <img src="{{product.img}}">
+	{{product.name}}
+	<br/>
+	{{product.brandname}}
+
+	
+	<div data-ng-switch="itemInCart()">
+		<div data-ng-switch-when="true">
+			<button data-ng-click="removeFromCart(product.id)">-</button>
+			<span>item.count</span>
+			<button data-ng-click="addToCart(product.id)">+</button>
+		</div>
+		<div data-ng-switch-when="false">
+			<button data-ng-click="addToCart(product.id)">Add To Cart</button>
+		</div>
+	</div>
+</div>

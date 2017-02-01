@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html data-ng-app="masalaapp">
+	<head>
+		<title>Masalas and Recipies</title>
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+
+		<div id="page-wrapper" data-ng-controller="masalaCtrl">
+			<div class="container">
+				<div class="products-pane col-md-8">
+					<div data-ng-repeat="product in productList" class="col-md-2 product-box">
+						<div>
+							<div>
+							    <img src="{{product.img}}">
+								{{product.name}}
+								<br/>
+								{{product.brandname}}
+
+								
+								<div data-ng-switch="itemInCart()">
+									<div data-ng-switch-when="true">
+										<button data-ng-click="removeFromCart(product.id)">-</button>
+										<span>{{updateCount(product.id)}}</span>
+										<button data-ng-click="addToCart(product.id)">+</button>
+									</div>
+									<div data-ng-switch-when="false">
+										<button data-ng-click="addToCart(product.id)">Add To Cart</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--product-box product="{{product}}"></product-box-->
+					</div>
+				</div>
+				<div data-ng-if="!isCartEmpty">
+					<div class="products-pane col-md-4">
+						<!--summary-pane cart="cart"></summary-pane-->
+						<div>
+							Your cart summary
+
+							<div>
+								<div>Items</div><div>Total Price</div>
+								<div>{{cart.length}}</div><div>{{totalPrice}}</div>
+							</div>
+							<hr/>
+
+							<table>
+								<th>Items</th><th>Quuantity</th><th>Total Price</th><th>Action</th>
+								<tr dta-ng-repeat="item in cart">
+									<th>{{item.name}}</th><td>item.count</td><th>{{item.totalPrice}}</th><th><button data-ng-click="removeFromCart(item.id)">Remove</button></th>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="products/productService.js"></script>
+		<script type="text/javascript" src="products/product.directive.js"></script>
+		<script type="text/javascript" src="summary/summary.directive.js"></script>
+
+	</body>
+</html>

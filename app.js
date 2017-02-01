@@ -8,6 +8,7 @@
 
 		$scope.isCartEmpty = true;
 
+// Once Server is setup ajax call can be uncommented
 		$scope.productList = [{
 			"name": "Chat Masala",
 			"brandname": "MDH",

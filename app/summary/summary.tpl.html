@@ -1,0 +1,17 @@
+<div class="summary-pane">
+	<h3>Your cart summary</h3>
+
+	<table>
+		<th>Total Items</th><th>Total Price</th>
+		<tr>
+			<td>{{cart.length}}</td><td>{{totalPrice}}</td>
+		</tr>
+	</table>
+
+	<table>
+		<th>Items</th><th>Quantity</th><th>Total Price</th><th>Action</th>
+		<tr ng-repeat="item in cart">
+			<td>{{item.name}}</td><td>{{item.itemCount}}</td><td>{{item.totalPrice}}</td><td><button class="btn btn-primary" ng-click="removeItemFromCart(item)">Remove</button></td>
+		</tr>
+	</table>
+</div>

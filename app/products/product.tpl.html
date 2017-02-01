@@ -1,0 +1,17 @@
+<div class="product">
+	<img ng-src="{{item.img}}">
+	<div class="title">{{item.name}}</div>
+	<div class="brand">{{item.brand}}</div>
+
+	<div ng-switch="itemInCart">
+		<div ng-switch-when="false">
+			<button ng-click="addItem(item)" class="btn btn-primary btn-sm">Add to cart</button>
+		</div>
+		<div ng-switch-when="true" class="input-group">
+			<span class="input-group-btn"><button ng-click="removeItem(item)" class="btn btn-primary btn-sm">-</button></span>
+			<input type="" name="" ng-model="itemCount" class="form-control" />
+			<span class="input-group-btn"><button ng-click="addItem(item)" class="btn btn-primary btn-sm">+</button></span>
+		</div>
+		
+	</div>
+</div>

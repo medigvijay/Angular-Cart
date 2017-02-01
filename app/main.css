@@ -1,0 +1,29 @@
+.product-box {
+	background-color: #fff;
+	border: 1px #ccc solid;
+	height: 175px;
+}
+
+.product-box .product {
+	height: 150px;
+	text-align: center;
+}
+
+.product-box img{
+	height: 75px;
+	width: 75px;
+}
+
+.product-box .title{
+	font-size: 13px;
+}
+
+.product-box .brand {
+	font-size: 12px;
+}
+
+.product-box .product input {
+	border: 1px #ccc solid;
+	height: 30px;
+	padding: 5px 10px;
+}

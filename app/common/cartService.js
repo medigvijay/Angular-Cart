@@ -60,6 +60,7 @@ angular.module("cartapp")
 			var removed = false;
 			for(var i = 0; i < this.cart.items.length; i++) {
 				if(this.cart.items[i].id === pro.id) {
+					this.cart.totalPrice -= this.cart.items[i].totalPrice;
 					this.cart.items.splice(i, 1);
 					removed = true;
 				}
